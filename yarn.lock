@@ -18,6 +18,11 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
+"@fastify/autoload@^5.8.3":
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/@fastify/autoload/-/autoload-5.8.3.tgz#23459e1eddf5dd473562c127e6ae2b6d26b06886"
+  integrity sha512-QR/bd/4EfGwWfk/3kmG8vj2iIXjoDt71AlYVujjJWYBjBh7oIFvxmT25jeVxkIK1ttmM3ycwsWwpg2MLObb54g==
+
 "@fastify/error@^3.3.0", "@fastify/error@^3.4.0":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@fastify/error/-/error-3.4.1.tgz#b14bb4cac3dd4ec614becbc643d1511331a6425c"
