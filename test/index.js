@@ -3,7 +3,7 @@
 import assert from 'assert'
 
 describe('Dummy', () => {
-    it('Dummy test', () => {
-        assert.equal(true, true)
-    })
+  it('Dummy test', () => {
+    assert.equal(true, true)
+  })
 })
