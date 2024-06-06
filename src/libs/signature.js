@@ -11,13 +11,13 @@ import bs58 from 'bs58'
  * @param signatureDate - Signature object with signature serialized buffer and Solana publicKey
  */
 export function validate(message, signatureDate) {
-    try {
-        return nacl.sign.detached.verify(
-            naclUtil.decodeUTF8(message),
-            Buffer.from(signatureDate.signature),
-            bs58.decode(signatureDate.publicKey)
-        )
-    } catch (e) {
-        return false
-    }
+  try {
+    return nacl.sign.detached.verify(
+      naclUtil.decodeUTF8(message),
+      Buffer.from(signatureDate.signature),
+      bs58.decode(signatureDate.publicKey),
+    )
+  } catch (e) {
+    return false
+  }
 }
