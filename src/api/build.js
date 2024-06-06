@@ -7,13 +7,13 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
 export async function build(opts) {
-    const fastify = Fastify(opts)
+  const fastify = Fastify(opts)
 
-    const __filename = fileURLToPath(import.meta.url)
-    const __dirname = dirname(__filename)
-    fastify.register(autoLoad, {
-        dir: join(__dirname, 'routes'),
-    })
+  const __filename = fileURLToPath(import.meta.url)
+  const __dirname = dirname(__filename)
+  fastify.register(autoLoad, {
+    dir: join(__dirname, 'routes'),
+  })
 
-    return fastify
+  return fastify
 }
