@@ -2,9 +2,16 @@
   "name": "beetalik-server",
   "version": "1.0.0",
   "description": "BeeTalik memecoin server",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.js",
   "repository": "git@github.com:BeeTalik/beetalik-server.git",
   "author": "Ferimer DevTeam",
   "license": "MIT",
-  "dependencies": {}
+  "scripts": {
+    "dev": "nodemon node src/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
 }
