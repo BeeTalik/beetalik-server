@@ -1,9 +1,4 @@
 'use strict'
 
-import assert from 'assert'
-
-describe('Dummy', () => {
-  it('Dummy test', () => {
-    assert.equal(true, true)
-  })
-})
+import libs from './libs/index.js'
+describe('Libs Tests', libs)
