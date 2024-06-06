@@ -1,19 +1,22 @@
 'use strict'
 
 import Fastify from 'fastify'
-const fastify = Fastify({
-  logger: true
-})
 
-import packageData from '../../package.json' assert { type: 'json' }
-fastify.get('/', async function (request, reply) {
-  reply.send(`Welcome to ${packageData.name} version ${packageData.version}`)
-})
+export default async function startApi(config) {
+  const fastify = Fastify({
+    logger: config.logger
+  })
 
-export default async function startApi() {
+  fastify.get('/', async function (request, reply) {
+    reply.send(`Welcome to ${config.info.name} version ${config.info.version}`)
+  })
+
   try {
-    await fastify.listen({ port: 3000 })
-    console.log(`${packageData.name} version ${packageData.version} listening at 3000`)
+    await fastify.listen({
+      host: config.host,
+      port: config.port,
+    })
+    fastify.log.info(`${config.info.name} version ${config.info.version} listening at ${config.host}:${config.port}`)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
