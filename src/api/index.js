@@ -1,21 +1,13 @@
 'use strict'
 
-import Fastify from 'fastify'
-import autoLoad from '@fastify/autoload'
-
-import { fileURLToPath } from 'url'
-import { dirname, join } from 'path'
+import { build } from './build.js'
 
 export default async function startApi(config) {
-  const fastify = Fastify({
+  const fastifyOpts = {
     logger: config.logger
-  })
+  }
 
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = dirname(__filename)
-  fastify.register(autoLoad, {
-    dir: join(__dirname, 'routes'),
-  })
+  let fastify = await build(fastifyOpts)
 
   try {
     await fastify.listen({
