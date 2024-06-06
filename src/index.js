@@ -1,3 +1,4 @@
 'use strict'
 
-console.log('BeeTalik Server')
+import startApi from './api/index.js'
+startApi()
