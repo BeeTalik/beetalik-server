@@ -4,12 +4,14 @@ import config from 'config'
 import jwt from 'jsonwebtoken'
 import { validate } from '../../libs/signature.js'
 
+import { v4 as uuidv4 } from 'uuid'
+
 const JWT_TYPE_LOGIN_CHALLENGE = 'loginChallenge'
 const JWT_TYPE_LOGGED = 'loginLogged'
 
 export function getLoginChallenge() {
   return jwt.sign(
-    { type: JWT_TYPE_LOGIN_CHALLENGE, value: Math.random() },
+    { type: JWT_TYPE_LOGIN_CHALLENGE, value: uuidv4() },
     config.jwt.challenge.secret,
     {
       expiresIn: config.jwt.challenge.expiresIn,

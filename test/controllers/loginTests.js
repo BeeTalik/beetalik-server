@@ -40,7 +40,7 @@ export default () => {
     try {
       const decoded = jwt.decode(challenge, config.jwt.challenge.secret)
       assert.equal(decoded.type, 'loginChallenge')
-      assert.equal(typeof decoded.value, 'number')
+      assert.equal(typeof decoded.value, 'string')
     } catch (error) {
       assert.fail(error)
     }
