@@ -15,7 +15,12 @@
     "pre-commit": "pretty-quick --staged && mocha -R progress"
   },
   "dependencies": {
+    "@fastify/autoload": "^5.8.3",
     "bs58": "^5.0.0",
+    "config": "^3.3.11",
+    "fastify": "^4.27.0",
+    "fastify-overview": "^3.9.0",
+    "fastify-overview-ui": "^2.2.5",
     "tweetnacl": "^1.0.3",
     "tweetnacl-util": "^0.15.1"
   },

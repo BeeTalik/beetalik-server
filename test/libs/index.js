@@ -2,4 +2,6 @@
 
 import signatureTests from './signatureTests.js'
 
-export default describe('Signature lib tests', signatureTests)
+export default () => {
+  describe('Signature lib tests', signatureTests)
+}
