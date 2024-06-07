@@ -12,4 +12,10 @@ module.exports = {
     port: 3000,
     logger: true,
   },
+  jwt: {
+    challenge: {
+      secret: '50094535-171d-4099-a817-8ad13d250a3a',
+      expiresIn: '60000',
+    },
+  },
 }
