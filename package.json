@@ -15,6 +15,9 @@
     "format:write": "prettier --write .",
     "pre-commit": "pretty-quick --staged && mocha -R progress"
   },
+  "pre-commit": [
+    "pre-commit"
+  ],
   "dependencies": {
     "@fastify/autoload": "^5.8.3",
     "@fastify/cors": "^9.0.1",
