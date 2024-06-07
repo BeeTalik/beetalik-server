@@ -1,6 +1,9 @@
 'use strict'
 
+import config from "config";
+
 import Fastify from 'fastify'
+import cors from '@fastify/cors'
 import autoLoad from '@fastify/autoload'
 
 import { fileURLToPath } from 'url'
@@ -8,6 +11,12 @@ import { dirname, join } from 'path'
 
 export async function build(opts) {
   const fastify = Fastify(opts)
+
+  await fastify.register(cors, {
+    origin: config.cors.origin,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
 
   if (process.env.NODE_ENV === 'development') {
     await fastify.register(await import('fastify-overview'), {

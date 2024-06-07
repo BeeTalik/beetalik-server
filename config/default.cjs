@@ -12,6 +12,9 @@ module.exports = {
     port: 3000,
     logger: true,
   },
+  cors: {
+    origin: true, // Really permisive, restrict to your needs setting an array of allowed URLs
+  },
   jwt: {
     challenge: {
       secret: '50094535-171d-4099-a817-8ad13d250a3a',

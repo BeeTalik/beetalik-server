@@ -1,3 +1,5 @@
+'use strict'
+
 import { build } from '../../src/api/build.js'
 import assert from 'assert'
 
