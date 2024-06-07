@@ -8,7 +8,7 @@ import {
   getLoggedToken,
 } from '../../../../../controllers/login/index.js'
 
-export default async function loginChallenge(app) {
+export default async function login(app) {
   app.post('/', async function (request, reply) {
     if (!request.body?.challenge) {
       reply.status(400).send('Challenge is required')
