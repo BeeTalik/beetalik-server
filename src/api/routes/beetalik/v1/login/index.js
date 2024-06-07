@@ -12,23 +12,28 @@ export default async function login(app) {
   app.post('/', async function (request, reply) {
     if (!request.body?.challenge) {
       reply.status(400).send('Challenge is required')
+      return
     }
     if (!request.body?.signature) {
       reply.status(400).send('Signature is required')
+      return
     }
     if (
       !request.body?.signature?.signature ||
       !request.body?.signature?.publicKey
     ) {
       reply.status(400).send('Invalid signature')
+      return
     }
 
     if (!verifyLoginChallenge(request.body.challenge)) {
       reply.status(400).send('Invalid challenge')
+      return
     }
 
     if (!verifySignature(request.body.challenge, request.body.signature)) {
       reply.status(400).send('Invalid signature')
+      return
     }
 
     reply.send({
