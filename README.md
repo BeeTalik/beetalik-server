@@ -1,6 +1,7 @@
 # BeeTalik Server
 
 [![Unit Tests](https://github.com/BeeTalik/beetalik-server/actions/workflows/unitTests.yml/badge.svg)](https://github.com/BeeTalik/beetalik-server/actions/workflows/unitTests.yml)
+[![Build Docker Image](https://github.com/BeeTalik/beetalik-server/actions/workflows/buildDocker.yml/badge.svg)](https://github.com/BeeTalik/beetalik-server/actions/workflows/buildDocker.yml)
 
 Rest API for BeeTalik project.
 
