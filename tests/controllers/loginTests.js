@@ -1,5 +1,6 @@
 'use strict'
 
+import { it } from 'node:test'
 import { signChallenge } from '../helpers/signature.js '
 
 import assert from 'assert'

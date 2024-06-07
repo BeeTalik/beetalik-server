@@ -1,5 +1,6 @@
 'use strict'
 
+import { describe } from 'node:test'
 import root from './root.js'
 import beetalikV1 from './beetalik/v1/index.js'
 import loginTests from './beetalik/v1/login/index.js'
