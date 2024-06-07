@@ -22,6 +22,7 @@
     "fastify": "^4.27.0",
     "fastify-overview": "^3.9.0",
     "fastify-overview-ui": "^2.2.5",
+    "jsonwebtoken": "^9.0.2",
     "tweetnacl": "^1.0.3",
     "tweetnacl-util": "^0.15.1"
   },
