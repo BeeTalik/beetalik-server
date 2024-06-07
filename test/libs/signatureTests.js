@@ -1,23 +1,17 @@
 'use strict'
 
+import { keypairGenerate, signData } from '../helpers/signature.js'
+
 import assert from 'assert'
 
-import { Keypair } from '@solana/web3.js'
-import nacl from 'tweetnacl'
-import naclUtil from 'tweetnacl-util'
-
 import { validate } from '../../src/libs/signature.js'
-
-function signData(message, keypair) {
-  return nacl.sign.detached(naclUtil.decodeUTF8(message), keypair.secretKey)
-}
 
 export default () => {
   describe('Solana Signature tests', () => {
     let signatureData = {}
     let message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     beforeEach(() => {
-      let keypair = Keypair.generate()
+      let keypair = keypairGenerate()
       signatureData = {
         signature: Buffer.from(signData(message, keypair)).toJSON(),
         publicKey: keypair.publicKey.toBase58(),
@@ -31,7 +25,7 @@ export default () => {
         assert.equal(validate(message, signatureData), false)
     })
     it('Invalid publicKey', () => {
-      let keypair = Keypair.generate()
+      let keypair = keypairGenerate()
       signatureData.publicKey = keypair.publicKey.toBase58()
       assert.equal(validate(message, signatureData), false)
     })

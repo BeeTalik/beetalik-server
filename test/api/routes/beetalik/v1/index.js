@@ -14,10 +14,10 @@ export default () => {
     fastify.close()
   })
 
-  it(`GET ${basePath}/ should return 200`, async () => {
+  it(`GET ${basePath} should return 200`, async () => {
     const response = await fastify.inject({
       method: 'GET',
-      url: `${basePath}/`,
+      url: `${basePath}`,
     })
     assert.equal(response.statusCode, 200)
   })
