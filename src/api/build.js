@@ -1,5 +1,7 @@
 'use strict'
 
+import config from "config";
+
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import autoLoad from '@fastify/autoload'
@@ -11,7 +13,7 @@ export async function build(opts) {
   const fastify = Fastify(opts)
 
   await fastify.register(cors, {
-    origin: true,
+    origin: config.cors.origin,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
