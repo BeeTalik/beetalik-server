@@ -18,18 +18,18 @@ export default () => {
     fastify.close()
   })
 
-  it(`GET ${basePath}/ should return 200`, async () => {
+  it(`GET ${basePath} should return 200`, async () => {
     const response = await fastify.inject({
       method: 'GET',
-      url: `${basePath}/`,
+      url: `${basePath}`,
     })
     assert.equal(response.statusCode, 200)
   })
 
-  it(`GET ${basePath}/ should return an object`, async () => {
+  it(`GET ${basePath} should return an object`, async () => {
     const response = await fastify.inject({
       method: 'GET',
-      url: `${basePath}/`,
+      url: `${basePath}`,
     })
     try {
       assert.equal(typeof JSON.parse(response.body), 'object')
@@ -38,10 +38,10 @@ export default () => {
     }
   })
 
-  it(`GET ${basePath}/ returned object with challenge`, async () => {
+  it(`GET ${basePath} returned object with challenge`, async () => {
     const response = await fastify.inject({
       method: 'GET',
-      url: `${basePath}/`,
+      url: `${basePath}`,
     })
     try {
       let object = JSON.parse(response.body)
@@ -52,10 +52,10 @@ export default () => {
     }
   })
 
-  it(`GET ${basePath}/ returned object challenge is a Valid JWT`, async () => {
+  it(`GET ${basePath} returned object challenge is a Valid JWT`, async () => {
     const response = await fastify.inject({
       method: 'GET',
-      url: `${basePath}/`,
+      url: `${basePath}`,
     })
     try {
       let object = JSON.parse(response.body)
