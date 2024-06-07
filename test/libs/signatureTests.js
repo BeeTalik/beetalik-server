@@ -1,5 +1,6 @@
 'use strict'
 
+import { beforeEach, describe, it } from 'node:test'
 import { keypairGenerate, signData } from '../helpers/signature.js'
 
 import assert from 'assert'

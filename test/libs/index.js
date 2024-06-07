@@ -1,5 +1,6 @@
 'use strict'
 
+import { describe } from 'node:test'
 import signatureTests from './signatureTests.js'
 
 export default () => {

@@ -1,5 +1,7 @@
 'use strict'
 
+import { describe } from 'node:test'
+
 import libs from './libs/index.js'
 describe('Libs Tests', libs)
 
