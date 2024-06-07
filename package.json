@@ -10,12 +10,12 @@
   "scripts": {
     "dev": "nodemon node src/index.js | pino-pretty",
     "start": "node src/index.js",
-    "test": "node --test test/index.js",
-    "test:watch": "node --test --watch test/index.js",
-    "coverage": "node --test --experimental-test-coverage test/index.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "coverage": "node --test --experimental-test-coverage",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
-    "pre-commit": "pretty-quick --staged && node --test --test-reporter dot test/index.js"
+    "pre-commit": "pretty-quick --staged && node --test --test-reporter dot"
   },
   "dependencies": {
     "@fastify/autoload": "^5.8.3",
