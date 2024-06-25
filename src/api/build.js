@@ -1,10 +1,13 @@
 'use strict'
 
-import config from "config";
+import config from 'config'
 
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import autoLoad from '@fastify/autoload'
+import auth from '@fastify/auth'
+
+import { registerBearerToken } from './hooks/bearerToken.js'
 
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
@@ -17,6 +20,7 @@ export async function build(opts) {
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
+  await fastify.register(auth)
 
   if (process.env.NODE_ENV === 'development') {
     await fastify.register(await import('fastify-overview'), {
@@ -32,6 +36,10 @@ export async function build(opts) {
       done()
     })
   }
+
+  // Extract Authenticate Bearer Token from header and store in token
+  //  do it before parsing body
+  fastify.addHook('onRequest', registerBearerToken(fastify))
 
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = dirname(__filename)
