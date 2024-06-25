@@ -21,6 +21,7 @@
     "pre-commit"
   ],
   "dependencies": {
+    "@fastify/auth": "^4.6.1",
     "@fastify/autoload": "^5.8.3",
     "@fastify/cors": "^9.0.1",
     "bs58": "^5.0.0",
