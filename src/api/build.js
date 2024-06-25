@@ -7,6 +7,7 @@ import cors from '@fastify/cors'
 import autoLoad from '@fastify/autoload'
 import auth from '@fastify/auth'
 
+import { fastifyRegisterAPIDoc } from './apidoc.js'
 import { registerBearerToken } from './hooks/bearerToken.js'
 
 import { fileURLToPath } from 'url'
@@ -14,6 +15,8 @@ import { dirname, join } from 'path'
 
 export async function build(opts) {
   const fastify = Fastify(opts)
+
+  await fastifyRegisterAPIDoc(fastify)
 
   await fastify.register(cors, {
     origin: config.cors.origin,
