@@ -23,6 +23,14 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
+"@fastify/auth@^4.6.1":
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@fastify/auth/-/auth-4.6.1.tgz#8a9437ad4d9f908dd69821e0119180056d1f190d"
+  integrity sha512-J/UkZw6EYUX7aXu78YLV1uE1ESbHsGNKxyO+H82ixdC3AnzBT8qeBI6K19mqVHfJTICy5m9uspj7PjC7EvZQ/A==
+  dependencies:
+    fastify-plugin "^4.0.0"
+    reusify "^1.0.4"
+
 "@fastify/autoload@^5.8.3":
   version "5.8.3"
   resolved "https://registry.yarnpkg.com/@fastify/autoload/-/autoload-5.8.3.tgz#23459e1eddf5dd473562c127e6ae2b6d26b06886"
