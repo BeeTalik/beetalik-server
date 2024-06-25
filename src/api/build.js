@@ -15,6 +15,11 @@ import { dirname, join } from 'path'
 export async function build(opts) {
   const fastify = Fastify(opts)
 
+  if (process.env.NODE_ENV === 'development') {
+    const { fastifyRegisterAPIDoc } = await import('./apidoc.js')
+    await fastifyRegisterAPIDoc(fastify)
+  }
+
   await fastify.register(cors, {
     origin: config.cors.origin,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],

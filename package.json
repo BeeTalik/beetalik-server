@@ -35,6 +35,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@fastify/swagger": "^8.14.0",
+    "@fastify/swagger-ui": "^4.0.0",
     "@solana/web3.js": "^1.92.2",
     "nodemon": "^3.1.3",
     "pino-pretty": "^11.1.0",
