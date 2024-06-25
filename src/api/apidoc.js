@@ -20,6 +20,10 @@ export async function fastifyRegisterAPIDoc(fastify) {
           description: 'Development (local) server',
         },
       ],
+      tags: [
+        { name: 'beetalikAPI', description: 'Beetalik API endpoints' },
+        { name: 'generic', description: 'Generic endpoints' },
+      ],
     },
   })
   await fastify.register(fastifySwaggerUI, {

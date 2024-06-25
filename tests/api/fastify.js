@@ -39,6 +39,8 @@ function fastifyTests(devMode) {
 }
 
 export default () => {
-  describe('Fastify Framework Tests (Non Development)', () => fastifyTests(false))
-  describe('Fastify Framework Tests (DEVELOPMENT MODE)', () => fastifyTests(true))
+  describe('Fastify Framework Tests (Non Development)', () =>
+    fastifyTests(false))
+  describe('Fastify Framework Tests (DEVELOPMENT MODE)', () =>
+    fastifyTests(true))
 }
